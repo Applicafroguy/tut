@@ -1,0 +1,13 @@
+.box {
+  border: 1px solid grey;
+  width: 60%;
+  background: #f2f2f2;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  p {
+    color: blue;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
