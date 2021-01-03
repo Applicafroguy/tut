@@ -4,10 +4,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { DetailComponent } from './details/detail.component';
+import { PostDetailsComponent } from './components/post-details/post-details.component';
+import { IdComponent } from './components/id/id.component';
 @NgModule({
   declarations: [
     AppComponent,
-    DetailComponent
+    DetailComponent,
+    PostDetailsComponent,
+    IdComponent
   ],
   imports: [
     BrowserModule,

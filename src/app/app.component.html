@@ -1,26 +1,17 @@
-<!-- <main>
+<main>
   <p>My name is</p>
 
-  <ng-container *ngIf="myPosts; else loading">
+  <!-- <ng-container *ngIf="myPosts; else loading">
     <app-detail *ngFor="let post of myPosts" [post]="post"></app-detail>
-  </ng-container>
+  </ng-container> -->
+  <div class="card-container">
+    <app-post-details
+      *ngFor="let post of tempData"
+      [post]="post"
+    ></app-post-details>
+  </div>
+
   <ng-template #loading>
     <p>Please wait while we get data</p>
   </ng-template>
-</main> -->
-<main>
-  <div class="nav">
-    <div class="main">Main Nac</div>
-    <div class="inner">Inner Nav</div>
-  </div>
-
-  <div class="message-container">
-    <div class="message-nav">Message Nav</div>
-    <div class="messages">Message</div>
-    <div class="message-input">inpu</div>
-  </div>
-  <div class="user-container">
-    <div class="search">search</div>
-    <div class="user-datils">users</div>
-  </div>
 </main>
