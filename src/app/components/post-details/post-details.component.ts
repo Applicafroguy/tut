@@ -7,7 +7,7 @@ import { IPosts } from 'src/app/models/post.model';
   styleUrls: ['./post-details.component.scss']
 })
 export class PostDetailsComponent implements OnInit {
-  @Input() post: IPosts;
+  @Input() post?: IPosts;
   constructor() { }
 
   ngOnInit(): void {

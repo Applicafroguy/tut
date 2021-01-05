@@ -1,15 +1,47 @@
 <main>
-  <p>My name is</p>
+  <div
+    [formGroup]="campaignForm"
+    style="display: flex; width: 40%; margin: 0 auto; margin-top: 2%"
+  >
+    <input
+      formControlName="campaign"
+      type="radio"
+      value="FTTH-PREPAID"
+      id="de"
+      name="campaign"
+    />
+    FTTH-PREPAID
+
+    <input
+      formControlName="campaign"
+      name="campaign"
+      style="margin-left: 30px"
+      value="FTTH-FREESETUP-FREEROUTER"
+      type="radio"
+      id="de"
+    />
+    FREESETUP
+  </div>
 
   <!-- <ng-container *ngIf="myPosts; else loading">
     <app-detail *ngFor="let post of myPosts" [post]="post"></app-detail>
   </ng-container> -->
   <div class="card-container">
-    <app-post-details
-      *ngFor="let post of tempData"
-      [post]="post"
-    ></app-post-details>
+    <pre>{{ selectedCampaign | json }}</pre>
   </div>
+
+  <div class="card-container" *ngIf="promoProducts; else loadingProd">
+    {{ promoProducts | json }}
+    <ng-container *ngFor="let promoProd of promoProducts">
+      <p *ngFor="let prod of promoProd['products']">
+        {{ prod.productName }} <br />
+        {{ prod.productCode }}
+      </p>
+    </ng-container>
+  </div>
+  <ng-template #loadingProd>
+    <p>Please wait while we load products bitch</p>
+  </ng-template>
 
   <ng-template #loading>
     <p>Please wait while we get data</p>
